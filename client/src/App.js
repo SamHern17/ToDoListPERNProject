@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import InputTodo from './components/InputTodo';
+import ListTodo from './components/ListTodo';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <Fragment>
     <div className="container">
       <InputTodo />
+      <ListTodo />
     </div>
     </Fragment>
   );
