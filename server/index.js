@@ -17,12 +17,22 @@ app.get("/todos", async (req, res) => {
     try {
         const allTodos = await pool.query("SELECT * FROM todo");
         res.json(allTodos.rows);
-    } catch {
+    } catch (err){
         console.error(err.message);
     }
 });
 
 //get a todo
+
+app.get("/todos/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const todo = await pool.query("SELECT * FROM todo WHERE todo_id = $1", [id]);
+        res.json(todo.rows[0]);
+    } catch (err){
+        console.error(err.message);
+    }
+});
 
 //create a todo
 app.post("/todos", async (req, res) => {
