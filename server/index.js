@@ -8,7 +8,7 @@ const port = 5000;
 //middleware
 app.use(cors());
 
-app.use(express.json()) // allows us to access the req.body
+app.use(express.json()); // allows us to access the req.body
 
 //ROUTES//
 
